@@ -1,5 +1,5 @@
 import './Navbar.css';
-
+import CartWidget from './CartWidget';
 function Navbar() {
   return (
 <header className='navbar'>
@@ -8,7 +8,7 @@ function Navbar() {
         <li><a href="#">Catálogo</a></li>
         <li><a href="#">Nosotros</a></li>
         <li><a href="#">Contacto</a></li>
-        <a href="#" alt="#"></a><img src="https://img.icons8.com/android/2x/shopping-cart-loaded.png" />
+        <CartWidget />
     </ul>
 
 </header>
