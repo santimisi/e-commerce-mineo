@@ -1,14 +1,25 @@
+import React from 'react'
 import './Body.css';
+import Card from './Card';
 import ItemCount from './ItemCount';
-import Greetings from './ItemListContainer';
-import ItemListContainer from './ItemListContainer'
-
+import ItemListContainer from './ItemListContainer';
+import Cards from './Card.js';
+import ItemList from './ItemList';
+import { useState, useEffect } from 'react';
 
 function Body() {
+
+
     return (
-<body className='body'>
+<section className='body'>
+<div>
+<ItemListContainer />
+</div>
+
+
 <ItemCount></ItemCount>
-</body>
+
+</section>
 
     )};
 

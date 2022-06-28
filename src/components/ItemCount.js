@@ -12,6 +12,12 @@ function ItemCount ({stock, initial, onAdd}) {
         setNum (inicial + 1)}
     }
 
+    const eliminarProducto = () => {
+      if (inicial > 0) {
+      setNum (inicial - 1)}
+  }
+
+
     stock = 5
     initial = inicial
     onAdd = initial
@@ -21,6 +27,7 @@ function ItemCount ({stock, initial, onAdd}) {
     <>
     <p>{initial}</p>
     <button onClick={añadirProducto}>añadir un producto</button>
+    <button onClick={eliminarProducto}>eliminar un producto</button>
     </>
   )
 }

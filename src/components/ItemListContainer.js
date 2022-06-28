@@ -1,9 +1,12 @@
 import React from 'react'
+import Cards from './Card.js';
+import ItemList from './ItemList'
 
-function Greetings (props) {
+function ItemListContainer (props) {
   return (
-    <p>Bienvenido, {props.nombre}, aca va a aparecer el catálogo</p>
+    <p>Bienvenido, {props.nombre}, aca va a aparecer el catálogo <ItemList /></p>
+    
   )
 }
 
-export default Greetings
+export default ItemListContainer
