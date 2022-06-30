@@ -15,10 +15,6 @@ function Body() {
 <div>
 <ItemListContainer />
 </div>
-
-
-<ItemCount></ItemCount>
-
 </section>
 
     )};
