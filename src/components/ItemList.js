@@ -1,13 +1,16 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import Cards from './Card'
 import Items from './Item'
+import ItemDetailContainer from './ItemDetailContainer'
 
 function ItemList () {
 
 
   return (
-    <div><Items /></div>
+
+    <div><Items/>
+    </div>
+
   )
 }
 
