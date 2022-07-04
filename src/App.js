@@ -22,6 +22,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/catalogo" element={<Catalogo />}></Route>
       </Routes>
+      <Body />
 
     </div>
   );
