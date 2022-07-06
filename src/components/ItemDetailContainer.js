@@ -23,7 +23,7 @@ const getItem = () => {
   return (
     <div className='ItemDetailContainer'>
       
-      <button onClick={<Routes><Route path="/Item/:id" element={< Item />} /></Routes>}>Detalles </button>
+      <button onClick={<Routes><Route path="/item/:productsId" element={< Item />} /></Routes>}>Detalles </button>
         <ItemDetails description={details}/>
     </div>
   );

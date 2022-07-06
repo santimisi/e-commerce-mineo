@@ -23,13 +23,13 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-      <Route path="/home" element={<Home />}></Route>
-        <Route path="/" element={<Catalogo />}></Route>
+        <Route path="/home" element={<Home />}></Route>
+        <Route path="/" element={<ItemListContainer />}></Route>
         <Route path="/catalogo" element={<Catalogo />}></Route>
         <Route path="/item/:productsId" element={< ItemDetailContainer />}></Route>
         <Route path="*" element={< NotFound />}></Route>
       </Routes>
-      < Body />
+      
 
     </div>
   );
