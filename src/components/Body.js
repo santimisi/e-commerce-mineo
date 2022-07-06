@@ -13,10 +13,8 @@ function Body() {
     return (
 <section className='body'>
 <div>
-<ItemListContainer />
+< ItemListContainer />
 </div>
-<p>detalles</p>
-      
 </section>
 
     )};

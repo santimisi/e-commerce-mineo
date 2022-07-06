@@ -9,7 +9,7 @@ function ItemListContainer (props) {
 
   useEffect (() => {
       setTimeout (() => {
-      fetch('https://fakestoreapi.com/products')
+      fetch('https://api.escuelajs.co/api/v1/products')
       .then((resp) => resp.json ())
       .then((data) => setInfo(data))
   }, 2000, [])})
@@ -17,8 +17,9 @@ function ItemListContainer (props) {
   return (
 
     <div>
-          <p>Bienvenido, aca va a aparecer el catálogo <ItemList /></p>
-          {info && info.map(i => <Item product={i.title} id={i.id} />)}
+
+          < ItemList item={info} />
+
 
     </div>
     

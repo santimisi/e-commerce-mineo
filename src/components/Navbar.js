@@ -3,14 +3,18 @@ import './Navbar.css';
 import CartWidget from './CartWidget';
 import Catalogo from './Catalogo/Catalogo';
 import Home from './Home/Home';
+import { Link } from 'react-router-dom';
+
+
 function Navbar() {
   return (
 <header className='navbar'>
     <ul>
-        <li><a href="/home">Home</a></li>
-        <li><a href="/catalogo">Catálogo</a></li>
-        <li><a href="#">Nosotros</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><Link to="/">Futura Brand</Link></li>
+        <li><Link to="/home">Home</Link></li>
+        <li><Link to="/catalogo">Catálogo</Link></li>
+        <li><Link to="#">Nosotros</Link></li>
+        <li><Link to="#">Contacto</Link></li>
         <CartWidget />
     </ul>
 

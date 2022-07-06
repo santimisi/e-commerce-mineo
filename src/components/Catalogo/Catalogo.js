@@ -1,8 +1,12 @@
 import React from 'react'
+import Body from '../Body';
 
 function Catalogo  () {
   return (
-    <div>Catalogo</div>
+    <div>Catalogo
+      < Body />
+    </div>
+
   )
 }
 
