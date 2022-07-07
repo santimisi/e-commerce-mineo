@@ -12,7 +12,7 @@ function ItemDetailContainer () {
     const [details, setDetails] = useState ([])
 
 const getItem = () => {
-    fetch('https://api.escuelajs.co/api/v1/products')
+    fetch('https://fakestoreapi.com/products')
     .then((resp) => {return resp.json ()})
     .then((data) => { const ItemDescription = data.map ((detailData) =>  <ItemDetails description={detailData.description} image={detailData.image} price={detailData.price} id={detailData.id} />
 
@@ -20,10 +20,12 @@ const getItem = () => {
     )
     setDetails (ItemDescription)})};
 
+
+
   return (
     <div className='ItemDetailContainer'>
       
-      <button onClick={<Routes><Route path="/item/:productsId" element={< Item />} /></Routes>}>Detalles </button>
+      <button onClick={<Routes><Route path="/item/:productsId" element={< ItemDetails />} /></Routes>}>Detalles </button>
         <ItemDetails description={details}/>
     </div>
   );
