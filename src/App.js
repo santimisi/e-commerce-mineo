@@ -17,15 +17,18 @@ import { BrowserRouter } from 'react-router-dom';
 import { NotFound } from './components/NotFound';
 import Item from './components/Item';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import { CategoryNavbar } from './components/CategoryNavbar';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
+      <CategoryNavbar />
       <Routes>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/" element={<ItemListContainer />}></Route>
         <Route path="/catalogo" element={<Catalogo />}></Route>
+        <Route path="/category/:catId" element={< ItemListContainer greeting={'FILTRADO'} />}></Route>
         <Route path="/item/:productsId" element={< ItemDetailContainer />}></Route>
         <Route path="*" element={< NotFound />}></Route>
       </Routes>

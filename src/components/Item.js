@@ -11,9 +11,10 @@ function Item (props) {
 
     return (
       <div className='Item'>
-        <Link to ={`/item/${props.id}`}><h2>Producto: {props.name}</h2></Link>
+        
+        <Link to ={`/item/${props.id}`}><h2>{props.name}</h2></Link>
         <img src={props.image} width="200" />
-        <h4>Precio: {props.price}</h4>
+        <h4>${props.price}</h4>
         <h4><ItemDetailContainer/></h4>
         <h4>id: {props.id}</h4>
         <p><ItemCount /></p>
