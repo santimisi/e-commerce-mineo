@@ -1,18 +1,21 @@
 import React from 'react';
 import Item from './Item';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import ItemDetailContainer from './ItemDetailContainer';
 import { Link, useParams } from 'react-router-dom';
 import ItemCount from './ItemCount';
+import { CartContext, CartProvider } from './context/useContext';
 
-function ItemDetails () {
+
+function ItemDetails ({item}) {
   const [add, setAdd] = useState(false)
-  const onAdd = (qty) => {setAdd (!add)}
+
+  const {addItem} = useContext(CartContext)
 
   const params = useParams() 
   const [detalles, setDetalles] = useState([])
 
-  
+
 
   const fetchDetail = () => {
   fetch(`https://fakestoreapi.com/products/${params.productsId}`)
@@ -25,7 +28,6 @@ function ItemDetails () {
     fetchDetail()
   }, [])
 
-
   return (
     <>
         <div>          
@@ -36,7 +38,8 @@ function ItemDetails () {
         add ?
         <div>Añadido!</div>
         :
-        < ItemCount onAdd={onAdd}  />
+        < ItemCount item={item} initial={1} addItem={addItem}  />
+        
         }
         <Link to="/cart"><button>Finalizar Compra</button></Link>
         </div>

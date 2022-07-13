@@ -4,27 +4,28 @@ import { Link } from 'react-router-dom';
 import ItemDetails from './ItemDetails';
 
 
-function ItemCount ({stock, initial, onAdd}) {
+function ItemCount ({item, stock, initial, addItem}) {
 
-    const [inicial, setNum] = useState (0);
+  const [qty, setQty] = useState (0);
 
 
 
-    const añadirProducto = () => {
-        if (inicial < stock) {
-        setNum (inicial + 1)}
+  const añadirProducto = () => {
+      if (qty < stock) {
+      setQty (qty + 1)}
 
+  }
+
+  const eliminarProducto = () => {
+    if (qty > 0) {
+    setQty (qty - 1)}
     }
 
-    const eliminarProducto = () => {
-      if (inicial > 0) {
-      setNum (inicial - 1)}
-  }
 
 
 
     stock = 5
-    initial = inicial
+    initial = qty
     
 
   
@@ -33,9 +34,9 @@ function ItemCount ({stock, initial, onAdd}) {
     <p>{initial}</p>
     <button onClick={añadirProducto }>añadir un producto</button>
     <button onClick={eliminarProducto}>eliminar un producto</button>
-    <button onClick= {() => onAdd()}>Añadir al carrito</button>
+    <button onClick= {() => addItem(item, qty)}>Añadir al carrito</button>
     </>
   )
 }
 
-export default ItemCount;
+export default ItemCount
