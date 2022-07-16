@@ -34,7 +34,7 @@ function ItemCount ({item, stock, initial, addItem}) {
     <p>{initial}</p>
     <button onClick={añadirProducto }>añadir un producto</button>
     <button onClick={eliminarProducto}>eliminar un producto</button>
-    <button onClick= {() => addItem(item, qty)}>Añadir al carrito</button>
+    <button onClick= {() => addItem( qty)}>Añadir al carrito</button>
     </>
   )
 }

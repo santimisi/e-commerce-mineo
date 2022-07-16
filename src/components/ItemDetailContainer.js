@@ -1,51 +1,43 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import ItemList from './ItemList'
-import Item from './Item'
+
 import ItemDetails from './ItemDetails'
 import { Link, Route, Routes, useParams } from 'react-router-dom'
 
 
 
 function ItemDetailContainer () {
-    
+  const [product, setProduct] = useState({});
     const [details, setDetails] = useState ([])
-    const { itemId } = useParams();
-    const [product, setProduct] = useState({});
+    const { productsId } = useParams();
 
-    console.log(itemId)
+
+    console.log(productsId)
 
 const getItem = () => {
-    fetch('https://fakestoreapi.com/products')
-    .then((resp) => {return resp.json ()})
-    .then((data) => { const ItemDescription = data.map ((detailData) =>  <ItemDetails description={detailData.description} image={detailData.image} price={detailData.price} id={detailData.id === itemId} />)
+    fetch(`https://fakestoreapi.com/products/${productsId}`)
+    .then((resp) => resp.json())
+    .then((data) =>setProduct(data) )
+}
     useEffect(() => {
-      const getItems = new Promise((resolve) => {
-        setTimeout(() => {
-          const myData = data.find((item) => item.id === itemId);
-  
-          resolve(myData);
-        }, 1000);
-      });
-      getItems
-      .then((res) => {
-        setProduct(res);
-      })
-  }, [itemId]);
-    setDetails (ItemDescription)})};
+      setTimeout(() => {
+        getItem();
+      }, 2000);
+     
+  }, [productsId]);
 
-    
+
+    console.log("producto seteados",product);
 
 
 
   return (
     <div className='ItemDetailContainer'>
       
-      <button onClick={<Routes><Route path="/item/:productsId" element={< ItemDetails />} /></Routes>}>Detalles </button>
-        < ItemDetails {...product}/>
+     {/*  <button onClick={<Routes><Route path="/item/:productsId" element={< ItemDetails />} /></Routes>}>Detalles </button> */}
+        < ItemDetails item={product}/>
     </div>
   )
 }
 
 export default ItemDetailContainer
-
