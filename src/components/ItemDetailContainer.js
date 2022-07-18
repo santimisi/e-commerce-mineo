@@ -15,17 +15,19 @@ function ItemDetailContainer () {
     console.log(productsId)
 
 const getItem = () => {
+  
     fetch(`https://fakestoreapi.com/products/${productsId}`)
     .then((resp) => resp.json())
     .then((data) =>setProduct(data) )
-}
-    useEffect(() => {
-      setTimeout(() => {
-        getItem();
-      }, 2000);
-     
-  }, [productsId]);
 
+}
+
+useEffect(() => {
+  setTimeout(() => {
+    getItem(product);
+  }, 2000);
+ 
+}, [productsId]);
 
     console.log("producto seteados",product);
 

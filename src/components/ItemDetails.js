@@ -31,7 +31,7 @@ function ItemDetails ({item}) {
         add ?
         <div>Añadido!</div>
         :
-        < ItemCount item={item} initial={1} addItem={onAdd}  />
+        < ItemCount item={item} initial={1} addItem={addItem}  />
         
         }
         <Link to="/cart"><button>Finalizar Compra</button></Link>
