@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 
 import ItemDetails from './ItemDetails'
 import { Link, Route, Routes, useParams } from 'react-router-dom'
+import { getOneItem } from './services/firestore';
+
 
 
 
@@ -16,8 +18,7 @@ function ItemDetailContainer () {
 
 const getItem = () => {
   
-    fetch(`https://fakestoreapi.com/products/${productsId}`)
-    .then((resp) => resp.json())
+    getOneItem(productsId)
     .then((data) =>setProduct(data) )
 
 }
@@ -31,8 +32,7 @@ useEffect(() => {
 
     console.log("producto seteados",product);
 
-
-
+  
   return (
     <div className='ItemDetailContainer'>
       
