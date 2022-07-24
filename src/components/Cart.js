@@ -4,13 +4,7 @@ import { ExpenseForm } from './ExpenseForm';
 
 const Cart = () => {
     const { items, removeItem, clearItems} = useContext(CartContext)
-    const {expenses, newExpense} = useState ([])
-    const addExpenseHandler = (newExpense) => {
-        setExpenses ([...expenses, newExpense])
-    }
-    const finalizarHandler = () => {
-        setFinalCompra(true)
-    }
+
     return (
         <div>
             {
