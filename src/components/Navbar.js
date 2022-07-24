@@ -4,8 +4,6 @@ import CartWidget from './CartWidget';
 import Catalogo from './Catalogo/Catalogo';
 import Home from './Home/Home';
 import { Link } from 'react-router-dom';
-
-
 function Navbar() {
   return (
 <header className='navbar'>
@@ -15,13 +13,9 @@ function Navbar() {
         <li><Link to="/catalogo">Catálogo</Link></li>
         <li><Link to="#">Nosotros</Link></li>
         <li><Link to="#">Contacto</Link></li>
-            <Link to="/"><CartWidget /></Link>
-        
+            <Link to="/cart"><CartWidget /></Link>
     </ul>
-
 </header>
-
   );
 }
-
 export default Navbar;

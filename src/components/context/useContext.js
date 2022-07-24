@@ -20,13 +20,16 @@ export const CartProvider = ({ children }) => {
         ?
         setItems(items.map((prod) => {
             if (prod.id === item.id) {
-                prod.qty += item.qty            
+                const copyItem = {...items};
+               copyItem.qty += item.qty     
+               return copyItem     
             }
-            return prod
         }))
         :
+        console.log("veo cantidad", qty);
+        console.log("compruebo item",items);
         setItems ([...items, { id: item.id, title: item.title, price: item.price, qty: qty }]);
-        console.log(items) 
+       console.log(items)
     }
 
     const removeItem = (id) => {

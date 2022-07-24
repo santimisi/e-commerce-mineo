@@ -20,13 +20,12 @@ import Item from './components/Item';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { CategoryNavbar } from './components/CategoryNavbar';
 import { CartContext, CartProvider } from './components/context/useContext';
-
 function App() {
   return (
     <div className="App">
+        <CartProvider>
       <Navbar />
       <CategoryNavbar />
-      <CartProvider>
       <Routes>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/" element={<ItemListContainer />}></Route>
@@ -37,10 +36,7 @@ function App() {
         <Route path="/cart" element={< Cart />}></Route>
       </Routes>
       </CartProvider>
-      
-
     </div>
   );
 }
-
 export default App;
