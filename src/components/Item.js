@@ -18,7 +18,7 @@ function Item (props, item) {
         <img src={props.image} width="200" />
         <h4>${props.price}</h4>
         <h4>id: {props.id}</h4>
-        <p>< ItemCount item={item} initial={1} addItem={addItem}  /></p>
+        
         
       </div>
     );

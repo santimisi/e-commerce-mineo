@@ -1,6 +1,9 @@
-import React, {useContext, useState} from 'react';
-import { CartContext } from './context/useContext'
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
+import React, {useContext, useEffect, useState} from 'react';
+import { useParams } from 'react-router-dom';
+import { CartContext, CartProvider } from './context/useContext'
 import { ExpenseForm } from './ExpenseForm';
+import db from './services/firestore';
 
 const Cart = () => {
     const { items, removeItem, clearItems} = useContext(CartContext)

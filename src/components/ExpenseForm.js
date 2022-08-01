@@ -1,9 +1,11 @@
-import { addDoc, collection, getFirestore } from 'firebase/firestore'
-import React, { useContext, useState } from 'react'
+import { addDoc, collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
+import React, { useContext, useEffect, useState } from 'react'
 import { CartContext, CartProvider } from './context/useContext';
 import db from './services/firestore';
 import { getAllItems } from './services/firestore';
 import { initializeApp } from 'firebase/app';
+import { useParams } from 'react-router-dom';
+import ItemDetailContainer from './ItemDetailContainer';
 export const ExpenseForm = (props) => {
     const { items, removeItem, clearItems} = useContext(CartContext)
     const [ nombre , setNombre] = useState ("")
@@ -21,7 +23,7 @@ export const ExpenseForm = (props) => {
         setEmail(event.target.value)
     }
     const submitHandler = (event) =>{
-        event.preventdefault();
+        event.preventDefault();
     
 
     const newBuyer = {
@@ -35,8 +37,18 @@ export const ExpenseForm = (props) => {
         items: items 
     }
     const ordersCollection = collection (db, "orders")
-    addDoc(ordersCollection, order)
+    addDoc(ordersCollection, order).then((doc) => setNewOrderId(doc.id))
+    setNombre ('')
+    setTelefono ('')
+    setEmail ('')
 }
+useEffect (() => {
+    const params = useParams()
+    const q = query(collection(db,"orders"), where (id == params.idProduct))
+    getDocs(q).then((snapshot) => {
+        CartProvider(snapshot.docs.map((doc) => {return {...doc.data(), id: doc.id}}))
+    })
+}, [])
   return (
     <div>
         <form onSubmit={submitHandler}>
