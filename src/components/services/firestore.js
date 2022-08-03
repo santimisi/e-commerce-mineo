@@ -39,4 +39,5 @@ export async function getOneItem (id) {
   return oneDocSnapshot.data()
 }
 
+
 export default db;

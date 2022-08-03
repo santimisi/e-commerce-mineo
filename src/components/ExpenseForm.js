@@ -1,18 +1,24 @@
-import { addDoc, collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
+import { addDoc, collection, doc, getDoc, getDocs, getFirestore, query, where } from 'firebase/firestore'
 import React, { useContext, useEffect, useState } from 'react'
 import { CartContext, CartProvider } from './context/useContext';
-import db from './services/firestore';
+import db, { getOneItem, getOneItemOrder, getOneOrder } from './services/firestore';
 import { getAllItems } from './services/firestore';
 import { initializeApp } from 'firebase/app';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import ItemDetailContainer from './ItemDetailContainer';
+import { render } from 'react-dom';
+
 export const ExpenseForm = (props) => {
     const { items, removeItem, clearItems} = useContext(CartContext)
     const [ nombre , setNombre] = useState ("")
     const [ telefono , setTelefono] = useState ("")
     const [ email , setEmail] = useState ("")
-    const [order, setNewOrderId] = useState ([])
-    
+    const [orderId, setNewOrderId] = useState ("")
+    const [fecha, setFecha] = useState ([])
+    const [iditems, setIdItems] = useState([])
+
+    const checkData = orderId == 0 ? "none" : "block"
+
     const nuevoNombre = (event) =>{
         setNombre(event.target.value)
     }
@@ -22,33 +28,30 @@ export const ExpenseForm = (props) => {
     const nuevoEmail = (event) =>{
         setEmail(event.target.value)
     }
+    const nuevaFecha = (event) => {
+        setFecha(event.target.value)
+    }
     const submitHandler = (event) =>{
         event.preventDefault();
     
-
     const newBuyer = {
         name: nombre,
         phone: telefono,
-        email: email
+        email: email,
+        fecha: fecha
     }
     const order = {
-        buyer: newBuyer,
-        
+        buyer: newBuyer,      
         items: items 
     }
     const ordersCollection = collection (db, "orders")
-    addDoc(ordersCollection, order).then((doc) => setNewOrderId(doc.id))
+    addDoc(ordersCollection, order).then((doc) =>  setNewOrderId(doc.id)) 
     setNombre ('')
     setTelefono ('')
     setEmail ('')
+
+
 }
-useEffect (() => {
-    const params = useParams()
-    const q = query(collection(db,"orders"), where (id == params.idProduct))
-    getDocs(q).then((snapshot) => {
-        CartProvider(snapshot.docs.map((doc) => {return {...doc.data(), id: doc.id}}))
-    })
-}, [])
   return (
     <div>
         <form onSubmit={submitHandler}>
@@ -66,7 +69,16 @@ useEffect (() => {
     <input type='email' 
     value={email}
     onChange={nuevoEmail}/>
+    <label>Fecha</label>
+    <input type='date' 
+    min='2019-01-01'
+    max='2022-12-31'
+    value={fecha}
+    onChange={nuevaFecha}/>
     <button type='submit'>Comprar</button>
+
+    <h6 className='idcompra' style={{display: checkData}}>Gracias por la compra! Su código de seguimiento es: {orderId}</h6>
+    
 </form></div>
   )
 }
