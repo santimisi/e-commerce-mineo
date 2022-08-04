@@ -1,8 +1,6 @@
 import React from 'react'
 import './Navbar.css';
 import CartWidget from './CartWidget';
-import Catalogo from './Catalogo/Catalogo';
-import Home from './Home/Home';
 import { Link } from 'react-router-dom';
 function Navbar() {
   return (

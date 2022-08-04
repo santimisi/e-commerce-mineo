@@ -1,6 +1,5 @@
 import React from 'react'
-import ItemListContainer from './ItemListContainer'
-import { Link, NavLink } from 'react-router-dom';
+import {NavLink } from 'react-router-dom';
 export const CategoryNavbar = () => {
         const categories = [
           { id: "todos los productos", address: '/', text: 'TODOS LOS PRODUCTOS' },

@@ -1,21 +1,16 @@
-import { addDoc, collection, doc, getDoc, getDocs, getFirestore, query, where } from 'firebase/firestore'
-import React, { useContext, useEffect, useState } from 'react'
-import { CartContext, CartProvider } from './context/useContext';
-import db, { getOneItem, getOneItemOrder, getOneOrder } from './services/firestore';
-import { getAllItems } from './services/firestore';
-import { initializeApp } from 'firebase/app';
-import { Link, useParams } from 'react-router-dom';
-import ItemDetailContainer from './ItemDetailContainer';
-import { render } from 'react-dom';
+import { addDoc, collection } from 'firebase/firestore'
+import React, { useContext, useState } from 'react'
+import { CartContext } from './context/useContext';
+import db from './services/firestore';
+
 
 export const ExpenseForm = (props) => {
-    const { items, removeItem, clearItems} = useContext(CartContext)
+    const { items, totalCompra} = useContext(CartContext)
     const [ nombre , setNombre] = useState ("")
     const [ telefono , setTelefono] = useState ("")
     const [ email , setEmail] = useState ("")
     const [orderId, setNewOrderId] = useState ("")
     const [fecha, setFecha] = useState ([])
-    const [iditems, setIdItems] = useState([])
 
     const checkData = orderId == 0 ? "none" : "block"
 
@@ -42,7 +37,8 @@ export const ExpenseForm = (props) => {
     }
     const order = {
         buyer: newBuyer,      
-        items: items 
+        items: items,
+        total: totalCompra
     }
     const ordersCollection = collection (db, "orders")
     addDoc(ordersCollection, order).then((doc) =>  setNewOrderId(doc.id)) 

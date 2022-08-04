@@ -1,10 +1,8 @@
 import React from 'react';
-import Item from './Item';
-import { useEffect, useState, useContext } from 'react';
-import ItemDetailContainer from './ItemDetailContainer';
+import { useState, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import ItemCount from './ItemCount';
-import { CartContext, CartProvider } from './context/useContext';
+import { CartContext} from './context/useContext';
 
 
 function ItemDetails ({item}) {

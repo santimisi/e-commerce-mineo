@@ -1,30 +1,19 @@
 import React from 'react'
 import { useState } from "react";
-import { Link } from 'react-router-dom';
-import ItemDetails from './ItemDetails';
-
 
 function ItemCount ({item, stock, initial, addItem}) {
 
   const [qty, setQty] = useState (0);
 
-
-
   const añadirProducto = () => {
-      if (qty < stock) {
       setQty (qty + 1)}
 
-  }
 
   const eliminarProducto = () => {
     if (qty > 0) {
     setQty (qty - 1)}
     }
 
-
-
-
-    stock = 5
     initial = qty
     
 
