@@ -10,7 +10,7 @@ function Item (props) {
   const {addItem} = useContext(CartContext)
   
     return (
-        <Card style={{width : "15rem" , margin : "20px" }}>
+        <Card style={{width : "15rem" , margin : "50px" }}>
           <Card.Img className='card-image' variant="top"  src={props.image} />
         <Card.Body>
           <Card.Title><Link to ={`/item/${props.id}`}><h2>{props.name}</h2></Link></Card.Title>

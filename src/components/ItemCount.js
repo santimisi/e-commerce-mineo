@@ -1,6 +1,12 @@
 import React from 'react'
 import { useState } from "react";
-
+import ButtonGroup from "@material-ui/core/ButtonGroup";
+import Badge from "@material-ui/core/Badge";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import Button from "@material-ui/core/Button";
+import AddIcon from "@material-ui/icons/Add";
+import RemoveIcon from "@material-ui/icons/Remove";
+import { Link } from 'react-router-dom';
 function ItemCount ({item, stock, initial, addItem}) {
 
   const [qty, setQty] = useState (0);
@@ -19,13 +25,26 @@ function ItemCount ({item, stock, initial, addItem}) {
 
   
     return (
-    <>
-    <p>{initial}</p>
-    <button onClick={añadirProducto }>añadir un producto</button>
-    <button onClick={eliminarProducto}>eliminar un producto</button>
-    <button onClick= {() => addItem(item, qty)}>Añadir al carrito</button>
-    </>
-  )
-}
+<div>
+        <Badge color="secondary" badgeContent={qty}>
+          <ShoppingCartIcon />{" "}
+        </Badge>
+<ButtonGroup>
+          <Button
+            onClick={eliminarProducto}>
+                          {" "}
+            <RemoveIcon fontSize="small" />
+          </Button>
+          <Button
+            onClick={añadirProducto}>
+            {" "}
+            <AddIcon fontSize="small" />
+          </Button>
+          <Button onClick= {() => addItem(item, qty)} variant="contained">Añadir al carrito</Button>
+          <Link to="/cart"><Button variant="contained">Finalizar compra</Button></Link>
+        </ButtonGroup>
+        </div>
+)}
+  
 
 export default ItemCount

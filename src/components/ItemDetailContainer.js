@@ -23,10 +23,7 @@ function ItemDetailContainer () {
   }
 
   useEffect(() => {
-    setTimeout(() => {
     getItem(product);
-    }, 2000);
-  
   }, [productsId]);
 
     console.log("producto seteados",product);

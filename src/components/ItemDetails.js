@@ -23,8 +23,9 @@ function ItemDetails ({item}) {
     <>
         <div>          
         <img src={item.image} width="200" />
+        <h2> {item.title} </h2>
         <p> {item.description} </p>
-        <p> Precio: {item.price}</p>
+        <p>${item.price}</p>
         {
         add ?
         <div>Añadido!</div>
@@ -32,7 +33,6 @@ function ItemDetails ({item}) {
         < ItemCount item={item} initial={1} addItem={addItem}  />
         
         }
-        <Link to="/cart"><button>Finalizar Compra</button></Link>
         </div>
       
     </>

@@ -16,7 +16,6 @@ function App() {
     <div className="App">
         <CartProvider>
       <Navbar />
-      <CategoryNavbar />
       <Routes>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/" element={<ItemListContainer />}></Route>
