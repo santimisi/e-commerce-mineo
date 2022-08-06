@@ -30,7 +30,7 @@ export const CartProvider = ({ children }) => {
         :
         console.log("veo cantidad", qty);
         console.log("compruebo item",items);
-        setItems ([...items, { id: item.id, title: item.title, price: item.price, qty: qty }]);
+        setItems ([...items, { id: item.id, title: item.title, price: item.price, qty: qty, image: item.image }]);
        console.log(items)
     }
 

@@ -2,6 +2,7 @@ import { addDoc, collection } from 'firebase/firestore'
 import React, { useContext, useState } from 'react'
 import { CartContext } from './context/useContext';
 import db from './services/firestore';
+import Form from 'react-bootstrap/Form';
 
 
 export const ExpenseForm = (props) => {
@@ -50,21 +51,25 @@ export const ExpenseForm = (props) => {
 }
   return (
     <div>
-        <form onSubmit={submitHandler}>
-    <label>Nombre y Apellido</label>
-    <input type='text'
-    value={nombre}
-    onChange={nuevoNombre}/>
-    <br></br>
-    <label>Teléfono</label>
-    <input type='number' 
-    value={telefono}
-    onChange={nuevoTelefono}/>
-    <br></br>
-    <label>E-mail</label>
-    <input type='email' 
-    value={email}
-    onChange={nuevoEmail}/>
+        <Form onSubmit={submitHandler}>
+            <Form.Group className="mb-3" controlId="formBasicText">
+                <Form.Label>Nombre</Form.Label>
+                <Form.Control type="text" placeholder="Enter name"  value={nombre} onChange={nuevoNombre}/>
+            </Form.Group>
+                <br></br>
+            <Form.Group className="mb-3" controlId="formBasicNumber">
+                <Form.Label>Telefono</Form.Label>
+                <Form.Control type="number" placeholder="Enter telephone"  value={telefono} onChange={nuevoTelefono}/>
+            </Form.Group>
+                <br></br>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control type="email" placeholder="Enter email"  value={email} onChange={nuevoEmail}/>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="dob">
+                <Form.Label>Fecha</Form.Label>
+                <Form.Control type="date" placeholder="Enter email" name="dob" value={fecha} onChange={nuevaFecha} min='2019-01-01' max='2022-12-31'/>
+            </Form.Group>
     <label>Fecha</label>
     <input type='date' 
     min='2019-01-01'
@@ -75,6 +80,7 @@ export const ExpenseForm = (props) => {
 
     <h6 className='idcompra' style={{display: checkData}}>Gracias por la compra! Su código de seguimiento es: {orderId}</h6>
     
-</form></div>
+</Form></div>
   )
 }
+

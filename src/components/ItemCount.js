@@ -29,7 +29,7 @@ function ItemCount ({item, stock, initial, addItem}) {
         <Badge color="secondary" badgeContent={qty}>
           <ShoppingCartIcon />{" "}
         </Badge>
-<ButtonGroup>
+        <ButtonGroup>
           <Button
             onClick={eliminarProducto}>
                           {" "}
