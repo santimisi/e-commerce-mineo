@@ -18,17 +18,17 @@ const Cart = () => {
 <Container>
   <Container>
   {
-                items.map((item) =>(
-                    <div key={item.id}>
+    items.map((item) =>(
+        <div key={item.id}>
                         
     <Row>
         <Col style={{margin:"5px"}}><img src={item.image} alt="imagen-producto" width="100" /></Col>
         <Col xs={6}><h4> {item.qty}  {" "} {item.title} </h4>
-        <h4 style={{fontWeight:"bold"}}>${item.price * item.qty}</h4>
+            <h4 style={{fontWeight:"bold"}}>${item.price * item.qty}</h4>
         </Col>
         <Col style={{margin: "30px"}}>
-        <Button style={{backgroundColor:"red"}} variant="contained" onClick={() => removeItem(item.id)}>Borrar producto
-        <DeleteIcon fontSize="small" /></Button>
+            <Button style={{backgroundColor:"red"}} variant="contained" onClick={() => removeItem(item.id)}>Borrar producto
+            <DeleteIcon fontSize="small" /></Button>
         </Col>
     </Row>
     </div>
