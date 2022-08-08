@@ -1,13 +1,21 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import Cards from './Card'
-import Items from './Item'
+import Item from './Item'
+import ItemDetailContainer from './ItemDetailContainer'
+import ItemListContainer from './ItemListContainer'
 
-function ItemList () {
-
-
-  return (
-    <div><Items /></div>
+function ItemList(itemprops){
+  return(
+    <div className='item-list'>
+      {itemprops.item.map ((item)=>(
+    < Item
+            name={item.title}
+            image={item.image}
+            price={item.price}
+            id={item.id}
+          />
+      ))}
+      </div>
   )
 }
 

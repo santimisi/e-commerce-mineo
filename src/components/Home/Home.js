@@ -1,4 +1,5 @@
 import React from 'react'
+<<<<<<< HEAD
 
 function Home () {
   return (
@@ -7,3 +8,14 @@ function Home () {
 }
 
 export default Home;
+=======
+import HomeBody from './HomeBody'
+
+function Home () {
+  return (
+    <div>< HomeBody /></div>
+  )
+}
+
+export default Home
+>>>>>>> dudas
