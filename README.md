@@ -1,3 +1,17 @@
+E-Commerce Mineo
+
+#Finalidad del proyecto
+
+La finalidad de este proyecto es crear una pagina e-commerce por lo pronto funcional
+
+#Librería utilizada
+
+La librería utilizada para la creación del proyecto es react-js en su versión 5.0.0
+
+#Ultimo commit de github:
+
+el último commit de github, desde el cual se podrá seguir trabajando el proyecto es el tree: https://github.com/santimisi/e-commerce-mineo/blob/trabajomejorado
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
