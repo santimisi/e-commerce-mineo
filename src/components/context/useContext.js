@@ -1,5 +1,7 @@
+import { getDocs, query, where } from 'firebase/firestore'
 import React, { createContext, useState } from 'react'
-
+import { useParams } from 'react-router-dom'
+import db from '../services/firestore'
 
 
 export const CartContext = createContext ([])
@@ -20,13 +22,16 @@ export const CartProvider = ({ children }) => {
         ?
         setItems(items.map((prod) => {
             if (prod.id === item.id) {
-                prod.qty += item.qty            
+                const copyItem = {...items};
+               copyItem.qty += item.qty     
+               return copyItem     
             }
-            return prod
         }))
         :
+        console.log("veo cantidad", qty);
+        console.log("compruebo item",items);
         setItems ([...items, { id: item.id, title: item.title, price: item.price, qty: qty }]);
-        console.log(items) 
+       console.log(items)
     }
 
     const removeItem = (id) => {
@@ -36,8 +41,15 @@ export const CartProvider = ({ children }) => {
     const clearItems = () => {
         setItems ([])
     }
+    const totalCantidad = () => {
+        return items.reduce((acc, item) => acc + item.qty, 0)
+      }
+    let totalCompra =
+        items.reduce((acc, item) => acc + item.qty * item.price, 0).toFixed(2)
+    
+
     return (
-        < CartContext.Provider value={{ items, addItem, removeItem,clearItems }}>
+        < CartContext.Provider value={{ items, addItem, removeItem,clearItems, totalCantidad, totalCompra }}>
             {children}
         </ CartContext.Provider >
     )

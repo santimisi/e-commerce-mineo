@@ -1,9 +1,10 @@
 import React, {useContext} from 'react';
 import { CartContext } from './context/useContext'
+import { ExpenseForm } from './ExpenseForm';
+
 
 const Cart = () => {
-    const { items, removeItem, clearItems} = useContext(CartContext)
-    
+    const { items, removeItem, clearItems, totalCompra} = useContext(CartContext)
     return (
         <div>
             {
@@ -16,6 +17,8 @@ const Cart = () => {
                 ) )
             }
             <h6><button onClick={() => clearItems()}>Vaciar Carrito</button></h6>
+            <h2><span className="order-summary-values">Total ${totalCompra}</span></h2>
+            <ExpenseForm/>
         </div>
     )
 }

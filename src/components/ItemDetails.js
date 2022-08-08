@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import Item from './Item';
 <<<<<<< HEAD
 import { useEffect, useState } from 'react';
@@ -14,9 +15,12 @@ function ItemDetails (idetail) {
 =======
 import { useEffect, useState, useContext } from 'react';
 import ItemDetailContainer from './ItemDetailContainer';
+=======
+import { useState, useContext } from 'react';
+>>>>>>> entregafirebase
 import { Link, useParams } from 'react-router-dom';
 import ItemCount from './ItemCount';
-import { CartContext, CartProvider } from './context/useContext';
+import { CartContext} from './context/useContext';
 
 
 function ItemDetails ({item}) {

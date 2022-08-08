@@ -1,12 +1,11 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+
 import Item from './Item'
-import ItemDetailContainer from './ItemDetailContainer'
-import ItemListContainer from './ItemListContainer'
+
 
 function ItemList(itemprops){
   return(
-    <div className='item-list'>
+    <div className='item-list' style={{display: "flex", flexWrap: "wrap"}}>
       {itemprops.item.map ((item)=>(
     < Item
             name={item.title}

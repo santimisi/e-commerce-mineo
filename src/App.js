@@ -1,35 +1,42 @@
 import React from 'react'
-import logo from './logo.svg';
-import ReactDOM from "react-dom";
 import './App.css';
 import Navbar from './components/Navbar';
 import Cart from './components/Cart'
+<<<<<<< HEAD
 import Body from './components/Body';
 import ItemCount from './components/ItemCount';
 import Greetings from './components/ItemListContainer'
 import ItemList from './components/ItemList';
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> entregafirebase
 import ItemListContainer from './components/ItemListContainer';
 >>>>>>> dudas
 import 'bootstrap'
-import ItemDetails from './components/ItemDetails';
 import { Routes, Route } from 'react-router-dom';
 import Catalogo from './components/Catalogo/Catalogo';
 import Home from './components/Home/Home';
+<<<<<<< HEAD
 import { BrowserRouter } from 'react-router-dom';
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> entregafirebase
 import { NotFound } from './components/NotFound';
-import Item from './components/Item';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { CategoryNavbar } from './components/CategoryNavbar';
+<<<<<<< HEAD
 import { CartContext, CartProvider } from './components/context/useContext';
 >>>>>>> dudas
 
+=======
+import {CartProvider } from './components/context/useContext';
+>>>>>>> entregafirebase
 function App() {
   return (
     <div className="App">
+        <CartProvider>
       <Navbar />
 <<<<<<< HEAD
       <Routes>
@@ -39,7 +46,6 @@ function App() {
       <Body />
 =======
       <CategoryNavbar />
-      <CartProvider>
       <Routes>
         <Route path="/home" element={<Home />}></Route>
         <Route path="/" element={<ItemListContainer />}></Route>
@@ -50,6 +56,7 @@ function App() {
         <Route path="/cart" element={< Cart />}></Route>
       </Routes>
       </CartProvider>
+<<<<<<< HEAD
       
 >>>>>>> dudas
 
@@ -57,4 +64,9 @@ function App() {
   );
 }
 
+=======
+    </div>
+  );
+}
+>>>>>>> entregafirebase
 export default App;

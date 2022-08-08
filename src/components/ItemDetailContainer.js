@@ -1,16 +1,22 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-
 import ItemDetails from './ItemDetails'
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 import { Link, Route, Routes, useParams } from 'react-router-dom'
 >>>>>>> dudas
+=======
+import { useParams } from 'react-router-dom'
+import { getOneItem } from './services/firestore';
+
+>>>>>>> entregafirebase
 
 
 
 function ItemDetailContainer () {
   const [product, setProduct] = useState({});
+<<<<<<< HEAD
     const [details, setDetails] = useState ([])
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -49,30 +55,39 @@ export default ItemDetailContainer
           const myData = data.find((item) => item.id === itemId);
 =======
     const { productsId } = useParams();
+=======
+  const [details, setDetails] = useState ([])
+  const { productsId } = useParams();
+>>>>>>> entregafirebase
 
 
-    console.log(productsId)
+  console.log(productsId)
 
+<<<<<<< HEAD
 const getItem = () => {
 >>>>>>> entregaduda
   
     fetch(`https://fakestoreapi.com/products/${productsId}`)
     .then((resp) => resp.json())
+=======
+  const getItem = () => {
+    
+    getOneItem(productsId)
+>>>>>>> entregafirebase
     .then((data) =>setProduct(data) )
 
-}
+  }
 
-useEffect(() => {
-  setTimeout(() => {
+  useEffect(() => {
+    setTimeout(() => {
     getItem(product);
-  }, 2000);
- 
-}, [productsId]);
+    }, 2000);
+  
+  }, [productsId]);
 
     console.log("producto seteados",product);
 
-
-
+  
   return (
     <div className='ItemDetailContainer'>
       

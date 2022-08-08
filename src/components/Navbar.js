@@ -2,6 +2,7 @@ import React from 'react'
 import './Navbar.css';
 import CartWidget from './CartWidget';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { Link } from 'react-router-dom';
 =======
 import Catalogo from './Catalogo/Catalogo';
@@ -10,6 +11,9 @@ import { Link } from 'react-router-dom';
 
 
 >>>>>>> dudas
+=======
+import { Link } from 'react-router-dom';
+>>>>>>> entregafirebase
 function Navbar() {
   return (
 <header className='navbar'>
@@ -24,13 +28,9 @@ function Navbar() {
 >>>>>>> dudas
         <li><Link to="#">Nosotros</Link></li>
         <li><Link to="#">Contacto</Link></li>
-            <Link to="/"><CartWidget /></Link>
-        
+            <Link to="/cart"><CartWidget /></Link>
     </ul>
-
 </header>
-
   );
 }
-
 export default Navbar;
