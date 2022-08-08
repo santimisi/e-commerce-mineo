@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import ItemList from './ItemList'
-import Item from './Item'
+
 import ItemDetails from './ItemDetails'
 <<<<<<< HEAD
 =======
@@ -11,8 +10,9 @@ import { Link, Route, Routes, useParams } from 'react-router-dom'
 
 
 function ItemDetailContainer () {
-    
+  const [product, setProduct] = useState({});
     const [details, setDetails] = useState ([])
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
     const { itemId } = useParams();
@@ -47,30 +47,45 @@ export default ItemDetailContainer
       const getItems = new Promise((resolve) => {
         setTimeout(() => {
           const myData = data.find((item) => item.id === itemId);
-  
-          resolve(myData);
-        }, 1000);
-      });
-      getItems
-      .then((res) => {
-        setProduct(res);
-      })
-  }, [itemId]);
-    setDetails (ItemDescription)})};
+=======
+    const { productsId } = useParams();
 
-    
+
+    console.log(productsId)
+
+const getItem = () => {
+>>>>>>> entregaduda
+  
+    fetch(`https://fakestoreapi.com/products/${productsId}`)
+    .then((resp) => resp.json())
+    .then((data) =>setProduct(data) )
+
+}
+
+useEffect(() => {
+  setTimeout(() => {
+    getItem(product);
+  }, 2000);
+ 
+}, [productsId]);
+
+    console.log("producto seteados",product);
 
 
 
   return (
     <div className='ItemDetailContainer'>
       
-      <button onClick={<Routes><Route path="/item/:productsId" element={< ItemDetails />} /></Routes>}>Detalles </button>
-        < ItemDetails {...product}/>
+     {/*  <button onClick={<Routes><Route path="/item/:productsId" element={< ItemDetails />} /></Routes>}>Detalles </button> */}
+        < ItemDetails item={product}/>
     </div>
   )
 }
 
+<<<<<<< HEAD
 export default ItemDetailContainer
 
 >>>>>>> dudas
+=======
+export default ItemDetailContainer
+>>>>>>> entregaduda

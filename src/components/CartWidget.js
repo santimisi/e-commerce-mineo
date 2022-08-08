@@ -1,10 +1,21 @@
-import React, {Component} from 'react'
+import React, { useContext} from 'react';
+import { CartContext, CartProvider } from './context/useContext';
 
-function CartWidget () {
+const CartWidget = () => {
+        const { items } = useContext(CartContext)
+        let itemsInCart = 0;
+
+        items && items.map((item) => {
+        itemsInCart = itemsInCart + item.qty
+        })
         return (
-            
-                <div><a href="#" alt="#"></a><img src="https://img.icons8.com/android/2x/shopping-cart-loaded.png" /></div>
-            
+                
+        <div>
+            <div className="itemsInCart">
+                {itemsInCart}
+            </div>
+                <img src ="https://www.svgrepo.com/show/80543/shopping-cart-outline.svg" width={30} alt="CartWidget"/>
+        </div>
         )
 }
 
