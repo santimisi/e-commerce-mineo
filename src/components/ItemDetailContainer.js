@@ -17,6 +17,7 @@ import { getOneItem } from './services/firestore';
 function ItemDetailContainer () {
   const [product, setProduct] = useState({});
 <<<<<<< HEAD
+<<<<<<< HEAD
     const [details, setDetails] = useState ([])
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -57,6 +58,8 @@ export default ItemDetailContainer
     const { productsId } = useParams();
 =======
   const [details, setDetails] = useState ([])
+=======
+>>>>>>> trabajomejorado
   const { productsId } = useParams();
 >>>>>>> entregafirebase
 
@@ -79,10 +82,7 @@ const getItem = () => {
   }
 
   useEffect(() => {
-    setTimeout(() => {
     getItem(product);
-    }, 2000);
-  
   }, [productsId]);
 
     console.log("producto seteados",product);

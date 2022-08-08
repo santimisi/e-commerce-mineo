@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from 'react'
 <<<<<<< HEAD
 import { useEffect, useState } from 'react'
@@ -10,6 +11,11 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from './context/useContext'
 >>>>>>> entregaduda
+=======
+import React from 'react'
+import { Link } from 'react-router-dom'
+
+>>>>>>> trabajomejorado
 import './Item.css'
 import './ItemCount'
 <<<<<<< HEAD
@@ -27,9 +33,9 @@ import Card from 'react-bootstrap/Card'
 >>>>>>> dudas
 
 function Item (props) {
-  const {addItem} = useContext(CartContext)
   
     return (
+<<<<<<< HEAD
 <<<<<<< HEAD
       <div className='Item'>
 <<<<<<< HEAD
@@ -56,6 +62,9 @@ function Item (props) {
 export default Item;
 =======
         <Card style={{width : "15rem" , margin : "20px" }}>
+=======
+        <Card style={{width : "15rem" , margin : "50px" }}>
+>>>>>>> trabajomejorado
           <Card.Img className='card-image' variant="top"  src={props.image} />
         <Card.Body>
           <Card.Title><Link to ={`/item/${props.id}`}><h2>{props.name}</h2></Link></Card.Title>

@@ -15,6 +15,7 @@ import ItemListContainer from './components/ItemListContainer';
 >>>>>>> dudas
 import 'bootstrap'
 import { Routes, Route } from 'react-router-dom';
+<<<<<<< HEAD
 import Catalogo from './components/Catalogo/Catalogo';
 import Home from './components/Home/Home';
 <<<<<<< HEAD
@@ -31,6 +32,11 @@ import { CartContext, CartProvider } from './components/context/useContext';
 >>>>>>> dudas
 
 =======
+=======
+
+import { NotFound } from './components/NotFound';
+import ItemDetailContainer from './components/ItemDetailContainer';
+>>>>>>> trabajomejorado
 import {CartProvider } from './components/context/useContext';
 >>>>>>> entregafirebase
 function App() {
@@ -39,6 +45,7 @@ function App() {
         <CartProvider>
       <Navbar />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/catalogo" element={<Catalogo />}></Route>
@@ -46,10 +53,11 @@ function App() {
       <Body />
 =======
       <CategoryNavbar />
+=======
+>>>>>>> trabajomejorado
       <Routes>
-        <Route path="/home" element={<Home />}></Route>
         <Route path="/" element={<ItemListContainer />}></Route>
-        <Route path="/catalogo" element={<Catalogo />}></Route>
+        <Route path="/" element={<ItemListContainer />}></Route>
         <Route path="/category/:catId" element={< ItemListContainer greeting={'FILTRADO'} />}></Route>
         <Route path="/item/:productsId" element={< ItemDetailContainer />}></Route>
         <Route path="*" element={< NotFound />}></Route>
