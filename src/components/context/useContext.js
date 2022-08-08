@@ -1,8 +1,4 @@
-import { getDocs, query, where } from 'firebase/firestore'
 import React, { createContext, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import db from '../services/firestore'
-
 
 export const CartContext = createContext ([])
 

@@ -9,7 +9,6 @@ import Catalogo from './components/Catalogo/Catalogo';
 import Home from './components/Home/Home';
 import { NotFound } from './components/NotFound';
 import ItemDetailContainer from './components/ItemDetailContainer';
-import { CategoryNavbar } from './components/CategoryNavbar';
 import {CartProvider } from './components/context/useContext';
 function App() {
   return (

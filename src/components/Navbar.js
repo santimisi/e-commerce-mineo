@@ -1,7 +1,6 @@
 import React from 'react'
 import './Navbar.css';
 import CartWidget from './CartWidget';
-import { Link } from 'react-router-dom';
 import { Button, Container, Nav, Navbar as NavBarBS } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";

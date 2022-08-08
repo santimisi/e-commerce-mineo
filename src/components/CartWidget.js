@@ -10,10 +10,10 @@ const CartWidget = () => {
                 itemsInCart = itemsInCart + item.qty
         })
         console.log("total",totalCantidad);
-        const checkCantidad = itemsInCart == 0 ? "none" : "block"
+        const checkCantidad = itemsInCart === 0 ? "none" : "block"
         return (
 
-                        <p style={{display: checkCantidad , fontSize:"12px"}}> {itemsInCart}</p>
+                <p style={{display: checkCantidad , fontSize:"12px"}}> {itemsInCart}</p>
 
 
         )

@@ -9,7 +9,6 @@ import { getOneItem } from './services/firestore';
 
 function ItemDetailContainer () {
   const [product, setProduct] = useState({});
-  const [details, setDetails] = useState ([])
   const { productsId } = useParams();
 
 

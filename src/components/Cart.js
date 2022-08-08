@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import { CartContext } from './context/useContext'
 import { ExpenseForm } from './ExpenseForm';
 import Container from 'react-bootstrap/Container';
@@ -12,6 +12,7 @@ import Button from "@material-ui/core/Button";
 const Cart = () => {
 
     const { items, removeItem, clearItems, totalCompra} = useContext(CartContext)
+    
     return (
         <>
 <Container>
@@ -21,7 +22,7 @@ const Cart = () => {
                     <div key={item.id}>
                         
     <Row>
-        <Col style={{margin:"5px"}}><img src={item.image} width="100" /></Col>
+        <Col style={{margin:"5px"}}><img src={item.image} alt="imagen-producto" width="100" /></Col>
         <Col xs={6}><h4> {item.qty}  {" "} {item.title} </h4>
         <h4 style={{fontWeight:"bold"}}>${item.price * item.qty}</h4>
         </Col>

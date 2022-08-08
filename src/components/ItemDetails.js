@@ -1,6 +1,5 @@
 import React from 'react';
-import { useState, useContext } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useContext } from 'react';
 import ItemCount from './ItemCount';
 import { CartContext} from './context/useContext';
 import Container from 'react-bootstrap/Container';
@@ -11,15 +10,11 @@ import Col from 'react-bootstrap/Col';
 function ItemDetails ({item}) {
 
   console.log("llega a detail",item);
-  const [add, setAdd] = useState(false)
+ 
 
   const {addItem} = useContext(CartContext)
 
-  const params = useParams() 
-  const [detalles, setDetalles] = useState([])
-  const onAdd = (numero) => {
-    addItem(item, numero)
-   }
+
 
 
   return (

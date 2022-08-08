@@ -1,13 +1,12 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { CartContext } from './context/useContext'
+
 import './Item.css'
 import './ItemCount'
 import Card from 'react-bootstrap/Card'
 
 
 function Item (props) {
-  const {addItem} = useContext(CartContext)
   
     return (
         <Card style={{width : "15rem" , margin : "50px" }}>
