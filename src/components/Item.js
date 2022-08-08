@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
-import './Item.css'
 import './ItemCount'
 import Card from 'react-bootstrap/Card'
 
